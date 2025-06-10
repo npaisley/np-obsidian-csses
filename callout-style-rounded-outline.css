@@ -1,0 +1,75 @@
+body.rounded-outline-callouts {
+    --callout-border-width: 1px;
+    --callout-radius: var(--callout-border-radius, 12px);
+    /* --callout-background-opacity: 0.03; */
+    --callout-padding: 0;
+    --callout-title-padding: var(--size-4-2) var(--size-4-4);
+    --callout-content-padding: 0 var(--size-4-6);
+}
+
+.rounded-outline-callouts {
+    .callout {
+        background-color: rgba(var(--callout-color), var(--callout-background-opacity, 0.03));
+    }
+
+    .callout-title {
+        background-color: rgba(var(--callout-color), 0.1);
+    }
+
+    .callout-content>.callout[data-callout-metadata~="fitted"] {
+        margin-left: calc(var(--size-4-6) * -1) !important;
+        margin-right: calc(var(--size-4-6) * -1) !important;
+        margin-bottom: 0 !important;
+        /* border-bottom: none;
+    border-left: none;
+    border-right: none; */
+    }
+
+    @media (hover: hover) {
+        .markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget):hover {
+            border-radius: var(--callout-radius);
+        }
+    }
+}
+
+/* @settings
+
+name: Custom Callout Styles
+id: potatwo-is-in-the-house
+settings:
+    - 
+        id: rounded-outline-callouts
+        title: Use Rounded Outline Callouts?
+        type: class-toggle
+        default: true
+    - 
+        id: callout-background-opacity
+        title: Callout Background Opacity
+        description: Opacity of the callout background
+        type: variable-number-slider
+        default: 0.03
+        min: 0
+        max: 1
+        step: 0.01
+    - 
+        id: callout-border-radius
+        title: Callout Border Radius
+        description: Radius of the callout border
+        type: variable-select
+        default: 12px
+        options:
+            - 
+                label: small (4px)
+                value: 4px
+            - 
+                label: medium (8px)
+                value: 8px
+            - 
+                label: large (12px)
+                value: 12px
+            - 
+                label: extra large (16px)
+                value: 16px
+
+
+*/

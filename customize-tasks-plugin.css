@@ -1,0 +1,29 @@
+/* tasks plugin styling */
+:root {
+    --tasks-edit-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(206, 214, 223)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-pencil'%3E%3Cpath d='M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z'/%3E%3Cpath d='m15 5 4 4'/%3E%3C/svg%3E");
+    --tasks-postpone-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-calendar-fold'%3E%3Cpath d='M8 2v4'/%3E%3Cpath d='M16 2v4'/%3E%3Cpath d='M21 17V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11Z'/%3E%3Cpath d='M3 10h18'/%3E%3Cpath d='M15 22v-4a2 2 0 0 1 2-2h4'/%3E%3C/svg%3E");
+}
+
+.tasks-edit, .tasks-postpone {
+    background-color: var(--text-muted);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    margin-left: .66em;
+    display: inline-block;
+    &::after {
+        content: none;
+    }
+}
+.task-list-item[data-task="x"], .task-list-item[data-task="X"], .task-list-item[data-task="-"] {
+    :is(.tasks-edit, .tasks-postpone):not(:hover) {
+        background-color: var(--checklist-done-color);
+    }
+}
+.tasks-edit {
+    -webkit-mask-image: var(--tasks-edit-svg);
+    mask-image: var(--tasks-edit-svg);
+}
+.tasks-postpone {
+    -webkit-mask-image: var(--tasks-postpone-svg);
+    mask-image: var(--tasks-postpone-svg);
+}

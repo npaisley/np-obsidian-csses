@@ -1,0 +1,16 @@
+.image-embed[src$="#invert"] :is(img, svg) {
+	filter: invert(1);
+}
+
+.image-embed[src$="#polaroid"] {
+	--polaroid-border-width: 4mm;
+	:is(img, svg) {
+		padding: var(--polaroid-border-width);
+		padding-bottom: calc(var(--polaroid-border-width) * 5.75);
+		background-color: #e7e7e7;
+		object-fit: cover;
+		height: 115mm;
+		width: 96mm;
+	}
+
+}

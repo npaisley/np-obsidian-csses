@@ -1,0 +1,265 @@
+/* Cusotm callout types */
+.callout{
+    &[data-callout="chem-experiments"], 
+    &[data-callout="chemistry"] {
+        --callout-color: var(--chemistry-callout-rgb, 69, 191, 85);
+        --callout-icon: lucide-flask-conical;
+    }
+}
+.callout {
+    &[data-callout="projects-in-progress"],
+    &[data-callout="open-folder"] {
+        --callout-color: 122, 186, 242;
+        --callout-icon: lucide-folder-open;
+    }
+}
+.callout {
+    &[data-callout="project"],
+    &[data-callout="closed-folder"] {
+        --callout-color: 122, 186, 242;
+        --callout-icon: lucide-folder-closed;
+    }
+}
+.callout {
+    &[data-callout="reading"],
+    &[data-callout="books"] {
+        --callout-color: 204, 85, 0;
+        --callout-icon: lucide-library;
+    }
+}
+.callout[data-callout="presentation"] {
+    --callout-color: 171, 71, 188;
+    --callout-icon: lucide-file-bar-chart-2;
+}
+.callout {
+    &[data-callout="long-term"],
+    &[data-callout="frozen"] {
+        --callout-color: var(--color-cyan-rgb);
+        --callout-icon: lucide-snowflake;
+    }
+}
+.callout[data-callout="euro"] {
+    --callout-color:  69, 191, 85;
+    --callout-icon: lucide-euro;
+}
+.callout[data-callout="dollar"] {
+    --callout-color:  69, 191, 85;
+    --callout-icon: lucide-dollar-sign;
+}
+.callout[data-callout="pound"] {
+    --callout-color:  69, 191, 85;
+    --callout-icon: lucide-pound-sterling;
+}
+.callout[data-callout="swiss-franc"] {
+    --callout-color:  69, 191, 85;
+    --callout-icon: lucide-swiss-franc;
+}
+.callout[data-callout="landmark"] {
+    --callout-color:  var(--color-cyan-rgb);
+    --callout-icon: lucide-landmark;
+}
+.callout[data-callout="food"] {
+    --callout-color:  94, 193, 147;
+    --callout-icon: lucide-utensils;
+}
+.callout[data-callout="drink"] {
+    --callout-color:  94, 193, 147;
+    --callout-icon: lucide-glass-water;
+}
+.callout {
+    &[data-callout="blocked"],
+    &[data-callout="wall"] {
+        --callout-color:  240, 62, 62;
+        --callout-icon: lucide-brick-wall;
+    }
+}
+.callout {
+    &[data-callout="users"],
+    &[data-callout="team"] {
+        --callout-color:  69, 191, 85;
+        --callout-icon: lucide-users;
+    }
+}
+.callout {
+    &[data-callout="user"],
+    &[data-callout="person"] {
+        --callout-color:  69, 191, 85;
+        --callout-icon: lucide-user;
+    }
+}
+.callout[data-callout="goal"] {
+    --callout-color:  239, 191, 4;
+    --callout-icon: lucide-medal;
+}
+.callout[data-callout="hourglass"] {
+    --callout-color:  136, 163, 161;
+    --callout-icon: lucide-hourglass;
+}
+.callout[data-callout="archive"] {
+    --callout-color:  136, 163, 161;
+    --callout-icon: lucide-archive;
+}
+.callout[data-callout="star"] {
+    --callout-color:  239, 191, 4;
+    --callout-icon: lucide-star;
+}
+.callout[data-callout="recipe"] {
+    --callout-color:  206, 184, 137;
+    --callout-icon: lucide-notebook-tabs;
+}
+.callout[data-callout="weather"] {
+    --callout-color:  84, 196, 236;
+    --callout-icon: lucide-cloud-sun-rain;
+}
+
+/* callout metadata styling */
+
+/* colour override */
+.callout {
+    &[data-callout-metadata~="light-gray"] {--callout-color:  var(--light-gray-callout-rgb, 233, 236, 239);}
+    &[data-callout-metadata~="medium-gray"] {--callout-color:  149, 150, 157;}
+    &[data-callout-metadata~="dark-gray"] {--callout-color:  52, 58, 64;}
+    &[data-callout-metadata~="yellow"] {--callout-color:  239, 234, 90;}
+    &[data-callout-metadata~="grapefruit"] {--callout-color:  218, 65, 103;}
+    &[data-callout-metadata~="burnt-orange"] {--callout-color:  190, 81, 3;} 
+    &[data-callout-metadata~="orange"] {--callout-color:  218, 65, 103;}
+    &[data-callout-metadata~="red"] {--callout-color:  240, 62, 62;}
+    &[data-callout-metadata~="dusty-rose"] {--callout-color:  201, 134, 134;}
+    &[data-callout-metadata~="light-green"] {--callout-color:  105, 219, 124;}
+    &[data-callout-metadata~="medium-green"] {--callout-color:  69, 191, 85;}
+    &[data-callout-metadata~="dark-green"] {--callout-color:  43, 138, 62;}
+    &[data-callout-metadata~="forest-green"] {--callout-color:  46, 111, 64;}
+    &[data-callout-metadata~="light-blue"] {--callout-color:  116, 192, 252;}
+    &[data-callout-metadata~="medium-blue"] {--callout-color:  34, 139, 230;}
+    &[data-callout-metadata~="dark-blue"] {--callout-color:  8, 61, 119;}
+    &[data-callout-metadata~="purple"] {--callout-color:  190, 75, 219;}
+    &[data-callout-metadata~="violet"] {--callout-color:  200, 184, 236;}
+    &[data-callout-metadata~="gold"] {--callout-color:  239, 191, 4;}
+    &[data-callout-metadata~="cyan"] {--callout-color:  0, 191, 188;}
+}
+
+
+/* colour modifiers */
+.callout[data-callout-metadata~="transparent"] {
+    background-color: rgba(var(--callout-color), 0);
+    >.callout-content {
+        background-color: transparent;
+    }
+}
+.callout[data-callout-metadata~="intense"] {
+    background-color: rgba(var(--callout-color), 0.2);
+}
+/* .callout[data-callout-metadata~="solid"] {
+    background-color: rgba(var(--callout-color), 0.2);
+} */
+
+/* callout border styling */
+.callout {
+    &[data-callout-metadata~="borderless"] {
+        border-width: 0;
+    }
+    /* selector is to make sure all other borders are cleared before adding new borders */
+    &[data-callout-metadata*="bw1-"], 
+    &[data-callout-metadata*="bw2-"], 
+    &[data-callout-metadata*="bw3-"], 
+    &[data-callout-metadata*="bw4-"] {
+        border-width: 0;
+    
+        &[data-callout-metadata~="bw1-L"] {border-left-width: 1px;}
+        &[data-callout-metadata~="bw1-R"] {border-right-width: 1px;}
+        &[data-callout-metadata~="bw1-T"] {border-top-width: 1px;}
+        &[data-callout-metadata~="bw1-B"] {border-bottom-width: 1px;}
+        &[data-callout-metadata~="bw1-A"] {border-width: 1px;}
+
+        &[data-callout-metadata~="bw2-L"] {border-left-width: 2px;}
+        &[data-callout-metadata~="bw2-R"] {border-right-width: 2px;}
+        &[data-callout-metadata~="bw2-T"] {border-top-width: 2px;}
+        &[data-callout-metadata~="bw2-B"] {border-bottom-width: 2px;}
+        &[data-callout-metadata~="bw2-A"] {border-width: 2px;}
+
+        &[data-callout-metadata~="bw3-L"] {border-left-width: 3px;}
+        &[data-callout-metadata~="bw3-R"] {border-right-width: 3px;}
+        &[data-callout-metadata~="bw3-T"] {border-top-width: 3px;}
+        &[data-callout-metadata~="bw3-B"] {border-bottom-width: 3px;}
+        &[data-callout-metadata~="bw3-A"] {border-width: 3px;}
+
+        &[data-callout-metadata~="bw4-L"] {border-left-width: 4px;}
+        &[data-callout-metadata~="bw4-R"] {border-right-width: 4px;}
+        &[data-callout-metadata~="bw4-T"] {border-top-width: 4px;}
+        &[data-callout-metadata~="bw4-B"] {border-bottom-width: 4px;}
+        &[data-callout-metadata~="bw4-A"] {border-width: 4px;}
+    }
+}
+/* title bar styling */
+.callout[data-callout-metadata~="no-title"]>.callout-title {
+    --callout-title-size: 0;
+}
+.callout[data-callout-metadata~="hide-title-bar"]>.callout-title {
+    display: none;
+}
+.callout[data-callout-metadata~="no-icon"] {
+    --callout-icon: none;
+}
+
+/* sub callout styles */
+.callout {
+    /* &[data-callout-metadata~="fitted-sub-callout"],
+    &[data-callout-metadata~="fitted"] {
+        margin: 1em -16px 0 -20px !important; /* MCL layout messes with this */
+        /* margin-left: -20px !important;
+        margin-right: -16px !important;
+        margin-bottom: 0 !important; */
+    /* } */
+    &[data-callout-metadata~="inherit-parent-callout-colour"] {
+        --callout-color:  inherit;
+    }
+}
+
+/* @settings
+
+name: Custom Callout Colours
+id: potatwo-is-in-the-house-meow
+settings:
+    -
+        id: callout-metadata-colours
+        title: Callout Metadata Styling
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: callout-metadata-colours-info-text
+        title: Metadata Callout Styling
+        description: "Can be applied to any callout by including the keywords as a space seperated list: `[!<callout-type>|<metadata>]`"
+        type: info-text
+        markdown: true
+    - 
+        id: light-gray-callout
+        title: Light Gray Callout Colour
+        description: light-gray
+        type: variable-color
+        opacity: false
+        format: rgb
+        alt-format:
+            -
+                id: light-gray-callout-rgb
+                format: rgb-values
+        default: rgb(233, 236, 239)
+    -
+        id: callout-colours
+        title: Custom Callout Colours
+        type: heading
+        level: 1
+        collapsed: true
+    - 
+        id: chemistry-callout
+        title: Chemistry Callout Colour
+        type: variable-color
+        opacity: false
+        format: rgb
+        alt-format:
+            -
+                id: chemistry-callout-rgb
+                format: rgb-values
+        default: rgb(69, 191, 85)
+
+*/

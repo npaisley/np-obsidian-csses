@@ -1,0 +1,80 @@
+.hide-properties-in-reading-view .metadata-container {
+    --metadata-display-reading: none;
+}
+
+.shadowed-images img {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.rounded-images img, .rounded-images .excalidraw-svg {
+	border-radius: 5px;
+}
+
+.transparent-table {
+    th, td {
+        border: 0;
+    }
+    thead tr {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+}
+
+.avoid-break-within-callout .callout {
+	page-break-inside: avoid;
+}
+
+.avoid-page-break-after-headings :is(h1, h2, h3, h4, h5, h6) {
+	page-break-after: avoid;
+}
+
+/* @settings
+
+name: CSS Utility Classes
+id: obsidian-css-utility-classes
+settings:
+    -
+        id: obsidian-css-utility-classes-info
+        title:
+        description: "
+            # How to use
+            
+            Add the desired classes as values to a property named `cssclasses`
+        "
+        type: info-text
+        markdown: true
+    -
+        id: available-classes-info
+        description: "
+            `hide-properties-in-reading-view`
+
+            - The documents properties will be hidden in reading view
+
+
+            `shadowed-images`
+
+            - Images will have a drop shadow (only really visible with light themes)
+
+
+            `rounded-images`
+
+            - images and excalidraw embeds will have rounded corners (5px radius)
+
+
+            `transparent-table`
+
+            - Tables will have transparent lines
+
+
+            `avoid-break-within-callout`
+
+            - Page breaks within callouts will be avoided
+
+
+            `avoid-page-break-after-headings`
+
+            - Page breaks immediately after headings will be avoided
+        "
+        type: info-text
+        markdown: true
+*/

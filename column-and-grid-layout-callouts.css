@@ -1,0 +1,141 @@
+/* Column-layout callout */
+
+/* TODO wtf does this do??? */
+.callout-content:has(:not(>.callout[data-callout="column-layout"]))>.callout[data-callout="column-layout"] {
+    margin: 0 !important;
+}
+
+/* TODO add flex-base, flex-grow, and flex-shrink options */
+/* TODO add no-wrap option */
+.callout-content:has(>.callout[data-callout="column-layout"][data-callout-metadata~="no-wrap"]) {
+    padding: 0;
+}
+.callout[data-callout="column-layout"] {  /* turn into empty box and make callout-content a flexbox */
+    border-width: 0;
+    background-color: transparent;
+    >.callout-title {
+        display: none;
+    }
+    > .callout-content {
+        background-color: transparent;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 16px;
+        padding: 0;
+        align-items: flex-start;
+        >:is(.callout, *) {  /* include .callout to maintain priority without using !important */
+            flex: auto;  /* make all content items flex to fill horizontal space*/
+            margin: 0;
+        }
+    }
+    /* no-wrap option */
+    &[data-callout-metadata~="no-wrap"]>.callout-content {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        --mask-image-content: linear-gradient(
+            to right,
+            transparent,
+            black 16px,
+            black calc(100% - 16px),
+            transparent
+        );
+        --mask-image-scrollbar: linear-gradient(
+            black,
+            black
+        );
+        mask-image: var(--mask-image-content), var(--mask-image-scrollbar);
+        mask-size: cover, 100% 11px;
+        mask-position: 0 0, 0 100%;
+        mask-repeat: no-repeat;
+        padding: 0 16px;
+        >:is(.callout, *) {
+            flex-basis: auto;
+        }
+    }
+    &[data-callout-metadata~="no-wrap"]>.callout-content::-webkit-scrollbar-button {
+        width: 6px;
+        display: hidden;
+        background: transparent;
+    }
+    /* option to make fill full height of parent callout */
+    &[data-callout-metadata~="full-height"]>.callout-content {
+        align-items: stretch;
+        >.callout.is-collapsed {
+            align-self: flex-start;
+        }
+        >.callout {
+            display: flex;
+            flex-flow: column nowrap;
+            >.callout-content {
+                flex: auto;
+            }
+        }
+    }
+}
+/* sizing */
+.callout[data-callout="column-layout"] {
+    &[data-callout-metadata~="base-200"] > .callout-content > * {flex-basis:200px;}
+    &[data-callout-metadata~="base-250"] > .callout-content > * {flex-basis:250px;}
+    &[data-callout-metadata~="base-300"] > .callout-content > * {flex-basis:300px;}
+    &[data-callout-metadata~="base-350"] > .callout-content > * {flex-basis:350px;}
+    &[data-callout-metadata~="base-400"] > .callout-content > * {flex-basis:400px;}
+    &[data-callout-metadata~="base-450"] > .callout-content > * {flex-basis:450px;}
+    &[data-callout-metadata~="base-500"] > .callout-content > * {flex-basis:500px;}
+    &[data-callout-metadata~="base-550"] > .callout-content > * {flex-basis:550px;}
+    > .callout-content>.callout{
+        &[data-callout-metadata~="base-auto"] {flex-basis: auto;}
+        &[data-callout-metadata~="base-200"] {flex-basis:200px;}
+        &[data-callout-metadata~="base-250"] {flex-basis:250px;}
+        &[data-callout-metadata~="base-300"] {flex-basis:300px;}
+        &[data-callout-metadata~="base-350"] {flex-basis:350px;}
+        &[data-callout-metadata~="base-400"] {flex-basis:400px;}
+        &[data-callout-metadata~="base-450"] {flex-basis:450px;}
+        &[data-callout-metadata~="base-500"] {flex-basis:500px;}
+        &[data-callout-metadata~="base-550"] {flex-basis:550px;}
+    }
+}
+.callout[data-callout="column-layout"][data-callout-metadata~="no-shrink"] > .callout-content > *,
+.callout[data-callout="column-layout"] > .callout-content > *[data-callout-metadata~="no-shrink"]  {
+    flex-shrink: 0;
+}
+.callout[data-callout="column-layout"][data-callout-metadata~="no-grow"] > .callout-content > *,
+.callout[data-callout="column-layout"] > .callout-content > *[data-callout-metadata~="no-grow"] {
+    flex-grow: 0;
+}
+
+
+/* test of grid layout */
+.callout[data-callout="grid-layout"] {
+    --callout-icon: none;
+    border-style: none;
+    >.callout-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        column-gap: 16px;
+        padding: 0;
+        >* {
+            margin: 0;
+        }
+    }
+}
+
+/* empty callout */
+.callout[data-callout="container"] {
+    background-color: transparent;
+    --callout-color: none;
+    --callout-icon: none;
+    border-width: 0;
+    >.callout-title {
+        display: none;
+    }
+    >.callout-content {
+        background-color: transparent;
+        padding: 0;
+        >:last-child {
+            margin-bottom: 0;
+        }
+        >:first-child {
+            margin-top: 0;
+        }
+    }
+}
